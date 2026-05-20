@@ -1,0 +1,47 @@
+<DOCTYPE! html>
+
+
+<html>
+	<body>
+		
+		<h1>Unit Converter</h1>
+		
+		Choose an SI unit: <button onclick="window.location.href='/length'">Length</button> <button onclick="window.location.href='/weight'">Weight</button> <button onclick="window.location.href='/temperature'">Temperature</button> <br><br>
+		
+		<form action="/weight" method="post">
+				
+			<label for="value">Enter the value to convert:</label>
+				<input type="text" id="value" name="weight_value"><br><br>
+			
+			<label for="units_from">Unit to convert from:</label>
+				<select id="units_from" name="weight_units_from">
+					<option value="millg">milligram</option>	
+					<option value="gram">gram</option>
+					<option value="kilog">kilogram</option>
+					<option value="metric_ton">metric tonne</option>
+					<option value="grain">grain</option>
+					<option value="ounce">ounce</option>
+					<option value="pound">pound</option>
+					<option value="short_ton">short ton</option>
+				</select><br><br>
+			<label for="units_to">Unit to convert to:</label>
+				<select id="units_to" name="weight_units_to">
+					<option value="millg">milligram</option>	
+					<option value="gram">gram</option>
+					<option value="kilog">kilogram</option>
+					<option value="metric_ton">metric tonne</option>
+					<option value="grain">grain</option>
+					<option value="ounce">ounce</option>
+					<option value="pound">pound</option>
+					<option value="short_ton">short ton</option>
+				</select><br><br>
+			<input type="submit" value="Convert">
+		</form>
+		
+		{% if result %}
+			Result: {{result }}
+		{% endif %}
+		
+	</body>
+	
+</html>

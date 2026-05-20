@@ -1,0 +1,37 @@
+<DOCTYPE! html>
+
+
+<html>
+	<body>
+		
+		<h1>Unit Converter</h1>
+		
+		Choose an SI unit: <button onclick="window.location.href='/length'">Length</button> <button onclick="window.location.href='/weight'">Weight</button> <button onclick="window.location.href='/temperature'">Temperature</button> <br><br>
+		
+		<form action="/temperature" method="post">
+			
+			<label for="value">Enter the value to convert:</label>
+				<input type="text" id="value" name="temperature_value"><br><br>
+			
+			<label for="units_from">Unit to convert from:</label>
+				<select id="units_from" name="temperature_units_from">
+					<option value="celsius">Celsius</option>	
+					<option value="fahrenheit">Fahrenheit</option>
+					<option value="kelvin">Kelvin</option>
+				</select><br><br>
+			<label for="units_to">Unit to convert to:</label>
+				<select id="units_to" name="temperature_units_to">
+					<option value="celsius">Celsius</option>	
+					<option value="fahrenheit">Fahrenheit</option>
+					<option value="kelvin">Kelvin</option>
+				</select><br><br>
+			<input type="submit" value="Convert"> <br>
+		</form>
+		
+		{% if result %}
+			Result: {{result }}
+		{% endif %}
+		
+	</body>
+	
+</html>
